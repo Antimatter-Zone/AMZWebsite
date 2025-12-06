@@ -9,6 +9,9 @@ import styles from "./Header.module.css";
 
 const navItems = [
   { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "Legal", href: "/legal" },
   { label: "Docs", href: "https://docs.once-ui.com/" },
   { label: "Components", href: "https://once-ui.com/components" },
 ];
