@@ -1,54 +1,55 @@
 "use client";
 
 import {
-  Heading,
-  Text,
+  Badge,
   Button,
   Column,
-  Badge,
-  Logo,
-  Line,
+  Heading,
   LetterFx,
+  Line,
+  Logo,
+  Text,
 } from "@once-ui-system/core";
 
 export default function Home() {
   return (
     <Column fillWidth center padding="l" style={{ minHeight: "100vh" }}>
-      <Column maxWidth="s" horizontal="center" gap="l" align="center">
+      <Column maxWidth="m" horizontal="center" gap="l" align="center">
         <Badge
           textVariant="code-default-s"
-          border="neutral-alpha-medium"
-          onBackground="neutral-medium"
+          border="brand-alpha-strong"
+          onBackground="brand-weak"
           vertical="center"
           gap="16"
         >
-          <Logo dark icon="/trademarks/wordmark-dark.svg" href="https://once-ui.com" size="xs" />
-          <Logo light icon="/trademarks/wordmark-light.svg" href="https://once-ui.com" size="xs" />
-          <Line vert background="neutral-alpha-strong" />
+          <Logo icon="/trademarks/amz-logo.svg" size="s" aria-label="AMZ" />
+          <Line vert background="brand-alpha-strong" />
           <Text marginX="4">
-            <LetterFx trigger="instant">An ecosystem, not a UI kit</LetterFx>
+            <LetterFx trigger="instant">AMZ Experience Platform</LetterFx>
           </Text>
         </Badge>
-        <Heading variant="display-strong-xl" marginTop="24">
-          Presence that doesn't beg for attention
+        <Heading variant="display-strong-xl" marginTop="24" align="center">
+          Design forward. Dark by default. Powered by Once UI.
         </Heading>
         <Text
-          variant="heading-default-xl"
+          variant="heading-default-l"
           onBackground="neutral-weak"
           wrap="balance"
           marginBottom="16"
+          align="center"
         >
-          Build with clarity, speed, and quiet confidence
+          Launch a modern AMZ-branded surface with prewired Once UI theming,
+          responsive typography, and rich motion primitives.
         </Text>
         <Button
           id="docs"
           href="https://docs.once-ui.com/once-ui/quick-start"
           data-border="rounded"
-          weight="default"
-          prefixIcon="copy"
+          weight="strong"
+          prefixIcon="rocket"
           arrowIcon
         >
-          Explore docs
+          Explore Once UI
         </Button>
       </Column>
     </Column>

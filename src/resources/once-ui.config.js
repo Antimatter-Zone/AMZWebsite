@@ -1,29 +1,29 @@
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://demo.once-ui.com";
+const baseURL = "https://amz.example.com";
 
 // Import and set font for each variant
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
+import { Fira_Code } from "next/font/google";
 
-const heading = Geist({
+const heading = Space_Grotesk({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
 });
 
-const body = Geist({
+const body = Inter({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
 
-const label = Geist({
+const label = Inter({
   variable: "--font-label",
   subsets: ["latin"],
   display: "swap",
 });
 
-const code = Geist_Mono({
+const code = Fira_Code({
   variable: "--font-code",
   subsets: ["latin"],
   display: "swap",
@@ -38,10 +38,10 @@ const fonts = {
 
 // default customization applied to the HTML in the main layout.tsx
 const style = {
-  theme: "system", // dark | light | system
-  neutral: "gray", // sand | gray | slate
+  theme: "dark", // dark | light | system
+  neutral: "slate", // sand | gray | slate
   brand: "blue", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-  accent: "indigo", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  accent: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "contrast", // color | contrast | inverse
   solidStyle: "flat", // flat | plastic
   border: "playful", // rounded | playful | conservative
@@ -72,18 +72,18 @@ const effects = {
     radius: 100,
   },
   gradient: {
-    display: false,
-    x: 50,
+    display: true,
+    x: 40,
     y: 0,
-    width: 100,
-    height: 100,
-    tilt: 0,
+    width: 120,
+    height: 120,
+    tilt: -12,
     colorStart: "brand-background-strong",
-    colorEnd: "static-transparent",
-    opacity: 50,
+    colorEnd: "accent-background-weak",
+    opacity: 30,
   },
   dots: {
-    display: true,
+    display: false,
     size: "2",
     color: "brand-on-background-weak",
     opacity: 40,
@@ -109,31 +109,31 @@ const effects = {
 const meta = {
   home: {
     path: "/",
-    title: "Once UI for Next.js",
+    title: "AMZ Experience Platform",
     description:
-      "An open-source design system and component library for Next.js that emphasizes easy styling and accessibility in UI development.",
+      "Design-forward AMZ experience starter built with Once UI for Next.js.",
     image: "/images/og/home.jpg",
-    canonical: "https://once-ui.com",
+    canonical: "https://amz.example.com",
     robots: "index,follow",
-    alternates: [{ href: "https://once-ui.com", hrefLang: "en" }],
+    alternates: [{ href: "https://amz.example.com", hrefLang: "en" }],
   },
   // add more routes and reference them in page.tsx
 };
 
 // default schema data
 const schema = {
-  logo: "",
+  logo: "/trademarks/amz-logo.svg",
   type: "Organization",
-  name: "Once UI",
+  name: "AMZ",
   description: meta.home.description,
-  email: "lorant@once-ui.com",
+  email: "hello@amz.example.com",
 };
 
 // social links
 const social = {
-  twitter: "https://www.twitter.com/_onceui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  twitter: "https://x.com/amazon",
+  linkedin: "https://www.linkedin.com/company/amazon",
+  discord: "https://discord.gg/", // placeholder
 };
 
 export { baseURL, fonts, style, meta, schema, social, effects, dataStyle };
