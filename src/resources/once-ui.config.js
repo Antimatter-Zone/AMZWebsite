@@ -117,7 +117,35 @@ const meta = {
     robots: "index,follow",
     alternates: [{ href: "https://amz.example.com", hrefLang: "en" }],
   },
-  // add more routes and reference them in page.tsx
+  about: {
+    path: "/about",
+    title: "About | AMZ Experience Platform",
+    description:
+      "Learn about the mission and vision guiding the AMZ Experience Platform.",
+    image: "/images/og/about.jpg",
+    canonical: "https://amz.example.com/about",
+    robots: "index,follow",
+    alternates: [{ href: "https://amz.example.com/about", hrefLang: "en" }],
+  },
+  contact: {
+    path: "/contact",
+    title: "Contact | AMZ Experience Platform",
+    description: "Get in touch with the AMZ Experience Platform team.",
+    image: "/images/og/contact.jpg",
+    canonical: "https://amz.example.com/contact",
+    robots: "index,follow",
+    alternates: [{ href: "https://amz.example.com/contact", hrefLang: "en" }],
+  },
+  legal: {
+    path: "/legal",
+    title: "Legal | AMZ Experience Platform",
+    description:
+      "Read the AMZ Experience Platform terms of service and privacy policy.",
+    image: "/images/og/legal.jpg",
+    canonical: "https://amz.example.com/legal",
+    robots: "index,follow",
+    alternates: [{ href: "https://amz.example.com/legal", hrefLang: "en" }],
+  },
 };
 
 // default schema data
