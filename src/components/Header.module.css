@@ -1,3 +1,18 @@
+.maintenanceBanner {
+    width: 100%;
+    background: linear-gradient(90deg, #b00000, #ff2a2a);
+    color: white;
+    text-align: center;
+    padding: 6px 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    z-index: 1000;
+}
+
+.maintenanceText {
+    display: block;
+}
+
 .header {
     position: sticky;
     top: 0;
