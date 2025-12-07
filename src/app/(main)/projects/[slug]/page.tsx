@@ -21,8 +21,9 @@ export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = findProject(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = findProject(slug);
 
   return Meta.generate({
     title: `${project.title} | Projects | AMZ Experience Platform`,
@@ -36,8 +37,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   });
 }
 
-export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
-  const project = findProject(params.slug);
+export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = findProject(slug);
 
   return (
     <Column fillWidth center padding="l" gap="xl">

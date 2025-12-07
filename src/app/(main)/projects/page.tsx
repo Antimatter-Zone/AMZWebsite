@@ -42,7 +42,7 @@ export default function ProjectsPage() {
           >
             <Heading variant="heading-strong-m">{project.title}</Heading>
             <Text onBackground="neutral-weak">{project.description}</Text>
-            <Row justify="space-between" align="center" gap="s" wrap>
+            <Row horizontal="between" vertical="center" gap="s" wrap>
               <Text variant="label-default-s" onBackground="neutral-weak">
                 {project.highlights[0]}
               </Text>

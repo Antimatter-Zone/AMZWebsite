@@ -40,7 +40,7 @@ export default function ContactPage() {
           <Heading variant="heading-strong-m">Contact details</Heading>
           <Column gap="s">
             {contactDetails.map((detail) => (
-              <Row key={detail.label} justify="space-between" gap="m" wrap>
+              <Row key={detail.label} horizontal="between" gap="m" wrap>
                 <Text variant="label-strong-s">{detail.label}</Text>
                 <Text onBackground="neutral-weak">{detail.value}</Text>
               </Row>
@@ -51,16 +51,14 @@ export default function ContactPage() {
         <Column gap="s" background="neutral-strong" padding="l" border="brand-weak">
           <Heading variant="heading-strong-m">Send a note</Heading>
           <Text onBackground="neutral-weak">
-            This placeholder form block can become a simple contact form. Swap these rows for
-            Once UI form fields to capture a name, email address, and message when you are ready to
-            wire it up.
+            Swap in live Once UI form fields when you are ready to collect inquiries. Capture a name,
+            email, and message so the team can route requests to the right partner.
           </Text>
           <Column
             as="form"
             className={styles.form}
             gap="m"
             aria-label="Contact form"
-            onSubmit={(event) => event.preventDefault()}
           >
             <label className={styles.field} htmlFor="name">
               <Text as="span" variant="label-default-s">
@@ -114,7 +112,7 @@ export default function ContactPage() {
             </label>
 
             <Line background="neutral-alpha-strong" />
-            <Button type="submit" weight="strong" aria-label="Submit contact form">
+            <Button type="button" weight="strong" aria-label="Submit contact form">
               Send message
             </Button>
           </Column>

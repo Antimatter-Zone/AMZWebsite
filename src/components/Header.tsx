@@ -22,6 +22,18 @@ export function Header() {
   const pathname = usePathname();
   const mobileMenuId = "primary-navigation";
 
+  const isActive = (href: string) => {
+    if (!pathname) {
+      return false;
+    }
+
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   const handleNavigate = () => {
     setIsOpen(false);
   };
@@ -31,7 +43,7 @@ export function Header() {
       <Flex
         className={styles.inner}
         align="center"
-        justify="space-between"
+        horizontal="between"
         fillWidth
         gap="s"
         s={{ direction: "column", align: "stretch", gap: "m" }}
@@ -58,9 +70,9 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={styles.navLink}
-              selected={pathname === item.href}
+              selected={isActive(item.href)}
               aria-label={`${item.label} navigation link`}
-              aria-current={pathname === item.href ? "page" : undefined}
+              aria-current={isActive(item.href) ? "page" : undefined}
               onClick={handleNavigate}
             >
               <Text variant="label-default-s">{item.label}</Text>
@@ -92,9 +104,9 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={classNames(styles.mobileLink)}
-              selected={pathname === item.href}
+              selected={isActive(item.href)}
               aria-label={`${item.label} navigation link`}
-              aria-current={pathname === item.href ? "page" : undefined}
+              aria-current={isActive(item.href) ? "page" : undefined}
               onClick={handleNavigate}
             >
               <Text variant="label-default-m">{item.label}</Text>

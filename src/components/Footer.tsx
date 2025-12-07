@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Flex, Row, SmartLink, Text } from "@once-ui-system/core";
 
 import styles from "./Footer.module.css";
@@ -9,14 +12,22 @@ const footerLinks = [
 ];
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState(() => new Date().getFullYear());
+
+  useEffect(() => {
+    const year = new Date().getFullYear();
+
+    if (year !== currentYear) {
+      setCurrentYear(year);
+    }
+  }, [currentYear]);
 
   return (
     <Flex as="footer" className={styles.footer} fillWidth>
       <Flex
         className={styles.inner}
         align="center"
-        justify="space-between"
+        horizontal="between"
         fillWidth
         gap="m"
         direction="column"
