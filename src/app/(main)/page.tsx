@@ -13,8 +13,8 @@ import {
 
 export default function Home() {
   return (
-    <Column fillWidth center padding="l" style={{ minHeight: "100vh" }}>
-      <Column maxWidth="m" horizontal="center" gap="l" align="center">
+    <Column fillWidth center padding="l" style={{ minHeight: "100vh" }} s={{ padding: "m" }}>
+      <Column maxWidth="m" horizontal="center" gap="l" align="center" s={{ gap: "m" }}>
         <Badge
           textVariant="code-default-s"
           border="brand-alpha-strong"

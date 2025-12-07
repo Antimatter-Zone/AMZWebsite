@@ -1,7 +1,8 @@
 import { Meta } from "@once-ui-system/core";
-import { Column, Heading, Line, Row, Text } from "@once-ui-system/core";
+import { Button, Column, Heading, Line, Row, Text } from "@once-ui-system/core";
 
 import { baseURL, meta } from "@/resources/once-ui.config";
+import styles from "./contact.module.css";
 
 export function generateMetadata() {
   return Meta.generate({
@@ -24,7 +25,7 @@ const contactDetails = [
 
 export default function ContactPage() {
   return (
-    <Column fillWidth center padding="l" gap="xl">
+    <Column fillWidth center padding="l" gap="xl" s={{ padding: "m", gap: "l" }}>
       <Column maxWidth="l" align="center" gap="s">
         <Heading variant="display-strong-l" align="center">
           Contact the AMZ Experience Team
@@ -34,7 +35,7 @@ export default function ContactPage() {
         </Text>
       </Column>
 
-      <Column maxWidth="xl" gap="l" fillWidth>
+      <Column maxWidth="xl" gap="l" fillWidth s={{ gap: "m" }}>
         <Column gap="s" background="neutral-strong" padding="l" border="brand-weak">
           <Heading variant="heading-strong-m">Contact details</Heading>
           <Column gap="s">
@@ -54,21 +55,69 @@ export default function ContactPage() {
             Once UI form fields to capture a name, email address, and message when you are ready to
             wire it up.
           </Text>
-          <Column gap="xs">
-            <Text variant="label-default-s">Name</Text>
+          <Column
+            as="form"
+            className={styles.form}
+            gap="m"
+            aria-label="Contact form"
+            onSubmit={(event) => event.preventDefault()}
+          >
+            <label className={styles.field} htmlFor="name">
+              <Text as="span" variant="label-default-s">
+                Name
+              </Text>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                className={styles.input}
+                aria-required="true"
+                aria-label="Name"
+                placeholder="Your name"
+              />
+            </label>
+
+            <label className={styles.field} htmlFor="email">
+              <Text as="span" variant="label-default-s">
+                Email
+              </Text>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                className={styles.input}
+                aria-required="true"
+                aria-label="Email"
+                placeholder="you@example.com"
+              />
+            </label>
+
+            <label className={styles.field} htmlFor="message">
+              <Text as="span" variant="label-default-s">
+                Message
+              </Text>
+              <textarea
+                id="message"
+                name="message"
+                required
+                className={styles.textarea}
+                rows={4}
+                aria-required="true"
+                aria-label="Message"
+                placeholder="How can we help?"
+              />
+              <Text as="span" variant="label-default-xs" onBackground="neutral-weak">
+                We respond to most inquiries within two business days.
+              </Text>
+            </label>
+
             <Line background="neutral-alpha-strong" />
+            <Button type="submit" weight="strong" aria-label="Submit contact form">
+              Send message
+            </Button>
           </Column>
-          <Column gap="xs">
-            <Text variant="label-default-s">Email</Text>
-            <Line background="neutral-alpha-strong" />
-          </Column>
-          <Column gap="xs">
-            <Text variant="label-default-s">Message</Text>
-            <Line background="neutral-alpha-strong" height="64" />
-          </Column>
-          <Text variant="label-default-s" onBackground="neutral-weak">
-            Placeholder submit action
-          </Text>
         </Column>
       </Column>
     </Column>
