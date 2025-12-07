@@ -17,52 +17,60 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "aurora-insights",
-    title: "Aurora Insights",
-    description: "AI-driven shopper intelligence that reveals trends, affinities, and next-best actions.",
+    slug: "dirty-dan",
+    title: "Dirty Dan",
+    description: "Single player exploration game",
     longDescription:
-      "Aurora Insights distills billions of behavioral signals into clear guidance so teams can act quickly and thoughtfully.",
+        "Dirty Dan is a procedurally generated 2D exploration game where gathering, scavenging, and " +
+        "surviving fuel your rise in a crooked little frontier town. Collect materials to sell, upgrade, " +
+        "and expand a settlement run by a delightfully corrupt mayor who always wants “just one more favor.”",
     highlights: [
-      "Predictive intent scoring for campaigns and merchandising",
-      "Dynamic cohorts that refresh with real-time signals",
-      "Executive-ready storytelling with Once UI data visuals",
+        "Face off against enemies strange and surprising, bargain with eccentric NPCs, and uncover secrets buried under the dust.",
+        "Every run remixes the world, the challenges, and the opportunities.",
+        "Dirty Dan is a perpetual expedition through chaos, charm, and questionable civic management.",
     ],
     media: {
-      src: "/images/og/home.jpg",
-      alt: "Data dashboard showcasing Aurora Insights visualizations",
+      src: "/images/projects/DD.png",
+      alt: "Dashboard showcasing Dirty Dan",
       width: 1200,
       height: 630,
-      caption: "Storytelling-ready Once UI visuals keep stakeholders aligned.",
+      caption: "Explore the depths, gather materials, and build your town!",
     },
   },
   {
-    slug: "nebula-commerce",
-    title: "Nebula Commerce",
-    description: "Composable storefronts with Once UI blocks, tuned for speed, accessibility, and brand fidelity.",
+    slug: "raindrop-central",
+    title: "RaindropCentral",
+    description: "Unify Your Minecraft Ecosystem",
     longDescription:
-      "Nebula Commerce pairs opinionated defaults with deep flexibility so teams can launch consistent experiences in days, not months.",
+      "Analytics, storytelling, and rewards in one cohesive control center. Empower your community with data-driven insights and engaging player experiences.",
     highlights: [
-      "Starter flows for browse, cart, and checkout",
-      "Adaptive layouts that stay on-brand across devices",
-      "Performance guardrails baked into each release",
+      "Enterprise grade tools including for reviewing graphical and raw data.",
+      "Multi-server quests, rewards, and exclusive titles.",
+      "Inventory management, shops, and so much more",
     ],
     media: {
-      src: "/images/og/home.jpg",
-      alt: "Responsive storefront mockups for Nebula Commerce",
+      src: "https://raindropcentral.com/images/rdp-text.png",
+      alt: "Raindrop Central",
       width: 1200,
       height: 630,
     },
   },
   {
-    slug: "pulse-observability",
-    title: "Pulse Observability",
-    description: "Unified telemetry spanning services, journeys, and Once UI interactions.",
+    slug: "raindrop-quests",
+    title: "RaindropQuests (RDQ)",
+    description: "Dive into quest lines to earn perks, ranks, and currencies to advance.",
     longDescription:
-      "Pulse Observability centralizes insights from frontend to edge services, making it easy to pinpoint regressions and wins alike.",
+      "RaindropQuests brings full-blown RPG progression into Minecraft with a system that feels deep, flexible, and endlessly expandable.",
     highlights: [
-      "Golden signals packaged as reusable dashboards",
-      "Alerting tuned to customer impact, not noise",
-      "Deep links from anomalies to related sessions",
+      "Powerful plugin that lets servers build custom rank trees.",
+      "Unlockable perks, customizable quest lines, unique rewards, and global bounty system.",
+      "GUI driven plugin for better player experience",
     ],
+      media: {
+          src: "",
+          alt: "Raindrop Quests",
+          width: 1200,
+          height: 630,
+      },
   },
 ];

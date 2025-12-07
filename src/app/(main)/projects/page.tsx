@@ -22,10 +22,10 @@ export default function ProjectsPage() {
     <Column fillWidth center padding="l" gap="xl" s={{ padding: "m", gap: "l" }}>
       <Column maxWidth="l" align="center" gap="s" s={{ gap: "s" }}>
         <Heading variant="display-strong-l" align="center">
-          Featured projects
+          Projects
         </Heading>
         <Text variant="heading-default-m" align="center" onBackground="neutral-weak">
-          Explore how we apply Once UI to deliver cohesive, high-performance AMZ experiences.
+          Explore Antimatter Zone LLC ongoing or completed projects
         </Text>
       </Column>
 

@@ -25,11 +25,11 @@ export default function Home() {
           <Logo icon="/trademarks/amz-logo.svg" size="s" aria-label="AMZ" />
           <Line vert background="brand-alpha-strong" />
           <Text marginX="4">
-            <LetterFx trigger="instant">AMZ Experience Platform</LetterFx>
+            <LetterFx trigger="instant">Antimatter Zone LLC</LetterFx>
           </Text>
         </Badge>
         <Heading variant="display-strong-xl" marginTop="24" align="center">
-          Design forward. Dark by default. Powered by Once UI.
+            Gravity Optional. Imagination Mandatory.
         </Heading>
         <Text
           variant="heading-default-l"
@@ -38,19 +38,9 @@ export default function Home() {
           marginBottom="16"
           align="center"
         >
-          Launch a modern AMZ-branded surface with prewired Once UI theming,
-          responsive typography, and rich motion primitives.
+            Creating innovative games, tools, and digital worlds
+            that empower players, communities, and creators.
         </Text>
-        <Button
-          id="docs"
-          href="https://docs.once-ui.com/once-ui/quick-start"
-          data-border="rounded"
-          weight="strong"
-          prefixIcon="rocket"
-          arrowIcon
-        >
-          Explore Once UI
-        </Button>
       </Column>
     </Column>
   );

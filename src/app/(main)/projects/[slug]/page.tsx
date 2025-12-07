@@ -100,10 +100,6 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             <Text variant="label-strong-s">Slug</Text>
             <Text onBackground="neutral-weak">/projects/{project.slug}</Text>
           </Row>
-          <Text onBackground="neutral-weak">
-            Ready to dive deeper? Connect this page to product requirement docs, demos, or live sandboxes so teams can explore
-            the work in context.
-          </Text>
         </Column>
       </Column>
     </Column>
