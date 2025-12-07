@@ -1,41 +1,41 @@
 .form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--size-12);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-12);
 }
 
 .field {
-  display: flex;
-  flex-direction: column;
-  gap: var(--size-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-4);
 }
 
 .input,
 .textarea {
-  width: 100%;
-  padding: var(--size-10) var(--size-12);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--scheme-neutral-600-30);
-  border-radius: 12px;
-  color: inherit;
-  transition: border-color 160ms ease, box-shadow 160ms ease;
+    width: 100%;
+    padding: var(--size-10) var(--size-12);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--scheme-neutral-600-30);
+    border-radius: 12px;
+    color: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
 .input:focus-visible,
 .textarea:focus-visible {
-  outline: none;
-  border-color: var(--brand-strong);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--brand-strong) 60%, transparent);
+    outline: none;
+    border-color: var(--brand-strong);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--brand-strong) 60%, transparent);
 }
 
 .textarea {
-  resize: vertical;
-  min-height: 160px;
+    resize: vertical;
+    min-height: 160px;
 }
 
 @media (max-width: 640px) {
-  .form {
-    gap: var(--size-10);
-  }
+    .form {
+        gap: var(--size-10);
+    }
 }

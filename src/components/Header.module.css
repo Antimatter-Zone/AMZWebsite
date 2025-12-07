@@ -1,86 +1,86 @@
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(5, 8, 14, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--scheme-neutral-600-30);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(5, 8, 14, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--scheme-neutral-600-30);
 }
 
 .inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0.75rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
 }
 
 .brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: inherit;
-  text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: inherit;
+    text-decoration: none;
 }
 
 .brandText {
-  letter-spacing: 0.04em;
+    letter-spacing: 0.04em;
 }
 
 .navLinks {
-  display: none;
-  align-items: center;
-  gap: 1rem;
+    display: none;
+    align-items: center;
+    gap: 1rem;
 }
 
 .navLink {
-  text-decoration: none;
-  color: inherit;
-  font-weight: 600;
-  outline: none;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    outline: none;
 }
 
 .navLink:focus-visible,
 .mobileLink:focus-visible,
 .brand:focus-visible {
-  outline: 2px solid var(--brand-strong);
-  outline-offset: 4px;
-  border-radius: 10px;
+    outline: 2px solid var(--brand-strong);
+    outline-offset: 4px;
+    border-radius: 10px;
 }
 
 .menuToggle {
-  display: flex;
+    display: flex;
 }
 
 .mobileMenu {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 0 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1.5rem 1rem;
 }
 
 .mobileLink {
-  text-decoration: none;
-  color: inherit;
-  font-weight: 600;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
 }
 
 @media (min-width: 768px) {
-  .inner {
-    padding: 1rem 2rem;
-  }
+    .inner {
+        padding: 1rem 2rem;
+    }
 
-  .navLinks {
-    display: flex;
-  }
+    .navLinks {
+        display: flex;
+    }
 
-  .menuToggle {
-    display: none;
-  }
+    .menuToggle {
+        display: none;
+    }
 
-  .mobileMenu {
-    display: none;
-  }
+    .mobileMenu {
+        display: none;
+    }
 }

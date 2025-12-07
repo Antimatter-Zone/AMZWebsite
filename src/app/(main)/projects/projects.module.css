@@ -1,29 +1,29 @@
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--size-16);
-  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--size-16);
+    width: 100%;
 }
 
 .card {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
-  transition: transform 160ms ease, box-shadow 160ms ease;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+    transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
 }
 
 .learnMore {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--size-4);
-  color: var(--brand-on-background-strong);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--size-4);
+    color: var(--brand-on-background-strong);
 }
 
 @media (max-width: 720px) {
-  .grid {
-    gap: var(--size-12);
-  }
+    .grid {
+        gap: var(--size-12);
+    }
 }
