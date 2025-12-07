@@ -146,6 +146,15 @@ const meta = {
     robots: "index,follow",
     alternates: [{ href: "https://amz.example.com/legal", hrefLang: "en" }],
   },
+  projects: {
+    path: "/projects",
+    title: "Projects | AMZ Experience Platform",
+    description: "Explore AMZ initiatives built with Once UI components and design principles.",
+    image: "/images/og/home.jpg",
+    canonical: "https://amz.example.com/projects",
+    robots: "index,follow",
+    alternates: [{ href: "https://amz.example.com/projects", hrefLang: "en" }],
+  },
 };
 
 // default schema data
