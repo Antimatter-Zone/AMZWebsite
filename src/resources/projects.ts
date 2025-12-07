@@ -1,9 +1,18 @@
+export type ProjectMedia = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
   description: string;
   longDescription: string;
   highlights: string[];
+  media?: ProjectMedia;
 };
 
 export const projects: Project[] = [
@@ -18,6 +27,13 @@ export const projects: Project[] = [
       "Dynamic cohorts that refresh with real-time signals",
       "Executive-ready storytelling with Once UI data visuals",
     ],
+    media: {
+      src: "/images/og/home.jpg",
+      alt: "Data dashboard showcasing Aurora Insights visualizations",
+      width: 1200,
+      height: 630,
+      caption: "Storytelling-ready Once UI visuals keep stakeholders aligned.",
+    },
   },
   {
     slug: "nebula-commerce",
@@ -30,6 +46,12 @@ export const projects: Project[] = [
       "Adaptive layouts that stay on-brand across devices",
       "Performance guardrails baked into each release",
     ],
+    media: {
+      src: "/images/og/home.jpg",
+      alt: "Responsive storefront mockups for Nebula Commerce",
+      width: 1200,
+      height: 630,
+    },
   },
   {
     slug: "pulse-observability",
