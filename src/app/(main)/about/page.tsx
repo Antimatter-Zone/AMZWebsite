@@ -62,6 +62,15 @@ export default function AboutPage() {
                         strengthens the developer and designer experience.
                     </Text>
                 </Column>
+
+                <Column gap="s" background="neutral-strong" padding="l" border="brand-weak">
+                    <Heading variant="heading-strong-m">Knowledge and Skills</Heading>
+                    <Text onBackground="neutral-weak">
+                        The Antimatter Zone LLC team is diverse and excels in numerous disciplines, languages, and
+                        frameworks. Although every skill may not be listed, the team has significantly more experience
+                        in Java, Game Maker Language (GML), Javascript, React, Once UI, Vue, Next.JS, and SQL.
+                    </Text>
+                </Column>
             </Column>
         </Column>
     );
