@@ -18,7 +18,7 @@ export function generateMetadata() {
 
 export default function AboutPage() {
   return (
-    <Column fillWidth center padding="l" gap="xl">
+    <Column fillWidth center padding="l" gap="xl" s={{ padding: "m", gap: "l" }}>
       <Column maxWidth="l" align="center" gap="s">
         <Heading variant="display-strong-l" align="center">
           About the AMZ Experience Platform
@@ -28,7 +28,7 @@ export default function AboutPage() {
         </Text>
       </Column>
 
-      <Column maxWidth="xl" gap="l" fillWidth>
+      <Column maxWidth="xl" gap="l" fillWidth s={{ gap: "m" }}>
         <Column gap="xs" background="neutral-strong" padding="l" border="brand-weak">
           <Heading variant="heading-strong-m">Our Mission</Heading>
           <Text onBackground="neutral-weak">

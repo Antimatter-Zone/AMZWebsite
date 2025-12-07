@@ -19,8 +19,8 @@ export function generateMetadata() {
 
 export default function ProjectsPage() {
   return (
-    <Column fillWidth center padding="l" gap="xl">
-      <Column maxWidth="l" align="center" gap="s">
+    <Column fillWidth center padding="l" gap="xl" s={{ padding: "m", gap: "l" }}>
+      <Column maxWidth="l" align="center" gap="s" s={{ gap: "s" }}>
         <Heading variant="display-strong-l" align="center">
           Featured projects
         </Heading>
@@ -29,7 +29,7 @@ export default function ProjectsPage() {
         </Text>
       </Column>
 
-      <Column className={styles.grid} gap="l" maxWidth="xl" fillWidth>
+      <Column className={styles.grid} gap="l" maxWidth="xl" fillWidth s={{ gap: "m" }}>
         {projects.map((project) => (
           <Column
             key={project.slug}
