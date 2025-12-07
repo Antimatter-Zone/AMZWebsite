@@ -33,8 +33,8 @@ export default function LegalPage() {
           <Heading variant="heading-strong-m">Terms of Service</Heading>
           <Text onBackground="neutral-weak">
             Use this section to outline acceptable use, service availability, and limitations of
-            liability. Until formal language is ready, this placeholder text signals where your
-            contractual terms will live.
+            liability. Replace the sample copy with approved contractual language so customers know
+            what to expect.
           </Text>
           <Line background="neutral-alpha-strong" />
           <Text onBackground="neutral-weak">
@@ -46,8 +46,8 @@ export default function LegalPage() {
         <Column gap="s" background="neutral-strong" padding="l" border="brand-weak">
           <Heading variant="heading-strong-m">Privacy Policy</Heading>
           <Text onBackground="neutral-weak">
-            Summarize how customer data is collected, stored, and shared. This placeholder gives you
-            space to articulate retention policies, user rights, and regional compliance notes.
+            Summarize how customer data is collected, stored, and shared. Use this block to
+            articulate retention policies, user rights, and regional compliance notes.
           </Text>
           <Line background="neutral-alpha-strong" />
           <Text onBackground="neutral-weak">

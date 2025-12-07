@@ -57,8 +57,9 @@ export default function AboutPage() {
           </Text>
           <Line background="neutral-alpha-strong" />
           <Text onBackground="neutral-weak">
-            This placeholder content highlights the kinds of storytelling space available here. Swap
-            in your own narrative to align with your organization’s values, rituals, and guardrails.
+            Use this block to spell out the principles, rituals, and guardrails that guide your teams.
+            Replace the sample copy with concrete examples so new collaborators understand how to
+            engage and ship quickly.
           </Text>
         </Column>
       </Column>
