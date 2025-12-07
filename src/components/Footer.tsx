@@ -51,7 +51,7 @@ export function Footer() {
                 </Row>
 
                 <Text variant="label-default-s" onBackground="neutral-weak" align="center">
-                    © 2021-{currentYear} AntiMatter Zone LLC – All rights reserved.
+                    © 2021-{currentYear} Antimatter Zone LLC – All rights reserved.
                 </Text>
             </Flex>
         </Flex>

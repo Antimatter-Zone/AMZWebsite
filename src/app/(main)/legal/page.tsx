@@ -35,7 +35,7 @@ export default function LegalPage() {
                         <br/>
                         <br/>
                         These Terms of Service (“Terms”) govern your access to and use of the website operated by
-                        AntiMatter Zone LLC (“Company,” “we,” “our,” or “us”), a Washington State limited liability
+                        Antimatter Zone LLC (“Company,” “we,” “our,” or “us”), a Washington State limited liability
                         company. By accessing or using this website (“Site”), you agree to be bound by these Terms and
                         all applicable laws and regulations. If you do not agree, you must discontinue use of the Site.
                         <br/>
@@ -107,7 +107,7 @@ export default function LegalPage() {
                         7. Product- and Project-Specific Policies
                         <br/>
                         <br/>
-                        Use of any AntiMatter Zone LLC product, service, or project is governed by separate Terms of
+                        Use of any Antimatter Zone LLC product, service, or project is governed by separate Terms of
                         Service and a separate Privacy Policy specific to that product.
                         These agreements may include additional conditions related to:
                         <br/>
@@ -166,7 +166,7 @@ export default function LegalPage() {
                         10. Limitation of Liability
                         <br/>
                         <br/>
-                        To the fullest extent permitted by law, AntiMatter Zone LLC is not liable for any indirect,
+                        To the fullest extent permitted by law, Antimatter Zone LLC is not liable for any indirect,
                         incidental, special, consequential, or punitive damages arising from:
                         <br/>
                         <br/>
@@ -184,7 +184,7 @@ export default function LegalPage() {
                         11. Indemnification
                         <br/>
                         <br/>
-                        You agree to indemnify and hold harmless AntiMatter Zone LLC, its officers,
+                        You agree to indemnify and hold harmless Antimatter Zone LLC, its officers,
                         employees, and partners from any claim or demand arising out of your misuse
                         of the Site or violation of these Terms.
                     </Text>
@@ -214,7 +214,7 @@ export default function LegalPage() {
                 <Column gap="s" background="neutral-strong" padding="l" border="brand-weak">
                     <Heading variant="heading-strong-m">Privacy Policy</Heading>
                     <Text onBackground="neutral-weak">
-                        This Privacy Policy explains how AntiMatter Zone LLC (“Company,” “we,” “our,” or “us”)
+                        This Privacy Policy explains how Antimatter Zone LLC (“Company,” “we,” “our,” or “us”)
                         collects, uses, stores, and protects information when you use our main company website and
                         the RaindropCentral platform (“Services”).
                         We operate as a Washington State limited liability company.
@@ -487,7 +487,7 @@ export default function LegalPage() {
                         12. No Affiliation with Microsoft or Mojang
                         <br/>
                         <br/>
-                        AntiMatter Zone LLC, RaindropCentral, and our related tools, plugins,
+                        Antimatter Zone LLC, RaindropCentral, and our related tools, plugins,
                         and services are not affiliated, associated, or endorsed by Microsoft, Mojang, or Minecraft.
                         <br/>
                         <br/>
@@ -507,7 +507,7 @@ export default function LegalPage() {
                 <Column gap="s" background="neutral-strong" padding="l" border="brand-weak">
                     <Heading variant="heading-strong-m">Contact Information</Heading>
                     <Text onBackground="neutral-weak">
-                        AntiMatter Zone LLC
+                        Antimatter Zone LLC
                         <br/>
                         Email: contact@antimatterzone.com
                         <br/>
