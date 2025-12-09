@@ -50,7 +50,7 @@ export const projects: Project[] = [
             "Inventory management, shops, and so much more",
         ],
         media: {
-            src: "https://raindropcentral.com/images/rdp-text.png",
+            src: "/images/projects/RDC.png",
             alt: "Raindrop Central",
             width: 1200,
             height: 630,
@@ -58,11 +58,11 @@ export const projects: Project[] = [
     },
     {
         slug: "dark-matter-servers",
-        title: "Dark Matter Servers",
+        title: "Darkmatter Servers",
         description: "High-performance game server hosting for Minecraft, Rust, and more with instant " +
             "deployment and enterprise-grade reliability.",
         longDescription:
-            "Dark Matter Servers is a multi-game hosting platform built for performance, scalability, " +
+            "Darkmatter Servers is a multi-game hosting platform built for performance, scalability, " +
             "and ease of use. Designed for communities of all sizes, it offers instant server provisioning, " +
             "low-latency global infrastructure, and powerful management tools. Whether you're running a modded " +
             "Minecraft network, a competitive Rust server, or experimenting with custom game setups, " +
@@ -74,7 +74,7 @@ export const projects: Project[] = [
             "Full control panel with automated backups, mod support, and scalable resources",
         ],
         media: {
-            src: "",
+            src: "/images/projects/DMS.png",
             alt: "Dark Matter Servers game hosting platform for Minecraft and Rust",
             width: 1200,
             height: 630,
