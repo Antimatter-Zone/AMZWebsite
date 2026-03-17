@@ -1,6 +1,7 @@
-import {Button, Column, Heading, Line, Meta, Row, Text} from "@once-ui-system/core";
+import {Column, Heading, Meta, Row, Text} from "@once-ui-system/core";
 
 import {baseURL, meta} from "@/resources/once-ui.config";
+import ContactForm from "./ContactForm";
 import styles from "./contact.module.css";
 
 export function generateMetadata() {
@@ -35,7 +36,7 @@ export default function ContactPage() {
             </Column>
 
             <Column maxWidth="xl" gap="l" fillWidth s={{gap: "m"}}>
-                <Column gap="s" background="neutral-strong" padding="l" border="brand-weak">
+                <Column gap="s" padding="l" className={styles.panel}>
                     <Heading variant="heading-strong-m">Contact details</Heading>
                     <Column gap="s">
                         {contactDetails.map((detail) => (
@@ -47,74 +48,13 @@ export default function ContactPage() {
                     </Column>
                 </Column>
 
-                <Column gap="s" background="neutral-strong" padding="l" border="brand-weak">
+                <Column gap="s" padding="l" className={styles.panel}>
                     <Heading variant="heading-strong-m">Send a note</Heading>
                     <Text onBackground="neutral-weak">
-                        Swap in live Once UI form fields when you are ready to collect inquiries. Capture a name,
-                        email, and message so the team can route requests to the right partner.
+                        Reach out to Antimatter Zone LLC for support, partnerships, or general questions. Share your
+                        details below and we will route your message to the right team member.
                     </Text>
-                    <Column
-                        as="form"
-                        className={styles.form}
-                        gap="m"
-                        aria-label="Contact form"
-                    >
-                        <label className={styles.field} htmlFor="name">
-                            <Text as="span" variant="label-default-s">
-                                Name
-                            </Text>
-                            <input
-                                id="name"
-                                name="name"
-                                type="text"
-                                required
-                                className={styles.input}
-                                aria-required="true"
-                                aria-label="Name"
-                                placeholder="Your name"
-                            />
-                        </label>
-
-                        <label className={styles.field} htmlFor="email">
-                            <Text as="span" variant="label-default-s">
-                                Email
-                            </Text>
-                            <input
-                                id="email"
-                                name="email"
-                                type="email"
-                                required
-                                className={styles.input}
-                                aria-required="true"
-                                aria-label="Email"
-                                placeholder="you@example.com"
-                            />
-                        </label>
-
-                        <label className={styles.field} htmlFor="message">
-                            <Text as="span" variant="label-default-s">
-                                Message
-                            </Text>
-                            <textarea
-                                id="message"
-                                name="message"
-                                required
-                                className={styles.textarea}
-                                rows={4}
-                                aria-required="true"
-                                aria-label="Message"
-                                placeholder="How can we help?"
-                            />
-                            <Text as="span" variant="label-default-xs" onBackground="neutral-weak">
-                                We respond to most inquiries within two business days.
-                            </Text>
-                        </label>
-
-                        <Line background="neutral-alpha-strong"/>
-                        <Button type="button" weight="strong" aria-label="Submit contact form">
-                            Send message
-                        </Button>
-                    </Column>
+                    <ContactForm/>
                 </Column>
             </Column>
         </Column>
