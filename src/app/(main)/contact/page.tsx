@@ -1,8 +1,16 @@
-import {Column, Heading, Meta, Row, Text} from "@once-ui-system/core";
-
+import {
+    Background,
+    Button,
+    Column,
+    Grid,
+    Heading,
+    Icon,
+    Meta,
+    Row,
+    Text,
+} from "@once-ui-system/core";
 import {baseURL, meta} from "@/resources/once-ui.config";
 import ContactForm from "./ContactForm";
-import styles from "./contact.module.css";
 
 export function generateMetadata() {
     return Meta.generate({
@@ -17,46 +25,130 @@ export function generateMetadata() {
     });
 }
 
-const contactDetails = [
-    {label: "Email", value: "contact@antimatterzone.com"},
-    {label: "Phone", value: ""},
-    {label: "Address", value: "100 N Howard St, Suite R, Spokane, WA 98201"},
+const contacts = [
+    {
+        title: "Chat on Discord",
+        description: "Join our community and chat with others.",
+        icon: "discord",
+        link: {
+            label: "Join Discord",
+            href: "https://discord.gg/6F6EM6rK2r",
+        },
+    },
+    {
+        title: "Send an email",
+        description: "Get in touch with us for help or feedback.",
+        icon: "email",
+        link: {
+            label: "Send email",
+            href: "mailto:contact@antimatterzone.com",
+        },
+    },
 ];
 
 export default function ContactPage() {
     return (
-        <Column fillWidth center padding="l" gap="xl" s={{padding: "m", gap: "l"}}>
-            <Column maxWidth="l" align="center" gap="s">
-                <Heading variant="display-strong-l" align="center">
-                    Contact Us
-                </Heading>
-                <Text variant="heading-default-m" align="center" onBackground="neutral-weak">
-                    We would love to hear from you! We accept all feedback, reports, and suggestions.
-                </Text>
-            </Column>
+        <Row fillWidth fitHeight horizontal="center">
+            <Column fillWidth horizontal="center" maxWidth="m">
+                <Row
+                    fillWidth
+                    horizontal="center"
+                    borderTop="neutral-medium"
+                    borderX="neutral-medium"
+                    paddingX="l"
+                    paddingY="24"
+                    textVariant="body-default-s"
+                    onBackground="brand-weak"
+                >
+                    Contact
+                </Row>
 
-            <Column maxWidth="xl" gap="l" fillWidth s={{gap: "m"}}>
-                <Column gap="s" padding="l" className={styles.panel}>
-                    <Heading variant="heading-strong-m">Contact details</Heading>
-                    <Column gap="s">
-                        {contactDetails.map((detail) => (
-                            <Row key={detail.label} horizontal="between" gap="m" wrap>
-                                <Text variant="label-strong-s">{detail.label}</Text>
-                                <Text onBackground="neutral-weak">{detail.value}</Text>
-                            </Row>
-                        ))}
+                <Row fillWidth horizontal="center" borderTop="neutral-medium" borderX="neutral-medium">
+                    <Column maxWidth="xs" gap="16" paddingY="48" paddingX="24">
+                        <Heading variant="display-strong-s" align="center">
+                            Get in touch
+                        </Heading>
+                        <Text variant="body-default-xl" align="center" wrap="balance" onBackground="neutral-weak">
+                            We're always here to help
+                        </Text>
                     </Column>
-                </Column>
+                </Row>
 
-                <Column gap="s" padding="l" className={styles.panel}>
-                    <Heading variant="heading-strong-m">Send a note</Heading>
-                    <Text onBackground="neutral-weak">
-                        Reach out to Antimatter Zone LLC for support, partnerships, or general questions. Share your
-                        details below and we will route your message to the right team member.
-                    </Text>
-                    <ContactForm/>
-                </Column>
+                <Grid
+                    fillWidth
+                    borderTop="neutral-medium"
+                    borderLeft="neutral-medium"
+                    columns="2"
+                    s={{columns: "1"}}
+                >
+                    {contacts.map((contact, index) => (
+                        <Column
+                            padding="24"
+                            borderRight="neutral-medium"
+                            borderBottom="neutral-medium"
+                            key={index}
+                            fillWidth
+                            gap="8"
+                        >
+                            <Background
+                                position="absolute"
+                                left="0"
+                                top="0"
+                                mask={{x: 75, y: -50, radius: 20}}
+                                grid={{display: true, width: "8px", height: "8px", color: "neutral-border-medium"}}
+                            />
+                            <Icon
+                                name={contact.icon}
+                                size="s"
+                                padding="12"
+                                radius="full"
+                                background="brand-alpha-weak"
+                                onBackground="brand-weak"
+                            />
+                            <Heading marginTop="16" marginLeft="12" as="h3" variant="heading-strong-l">
+                                {contact.title}
+                            </Heading>
+                            <Text
+                                marginBottom="16"
+                                marginLeft="12"
+                                onBackground="neutral-medium"
+                                variant="body-default-s"
+                                wrap="balance"
+                            >
+                                {contact.description}
+                            </Text>
+                            <Button
+                                weight="default"
+                                size="s"
+                                href={contact.link.href}
+                                variant="secondary"
+                            >
+                                {contact.link.label}
+                            </Button>
+                        </Column>
+                    ))}
+                </Grid>
+
+                <Row fillWidth height="16" borderLeft="neutral-medium" borderRight="neutral-medium"/>
+
+                <Row border="neutral-medium" m={{direction: "column"}}>
+                    <Column fillWidth>
+                        <ContactForm/>
+                    </Column>
+
+                    <Column fillWidth minHeight={32}>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.8!2d-117.4260!3d47.6588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDM5JzMxLjciTiAxMTfCsDI1JzMzLjYiVw!5e0!3m2!1sen!2sus!4v1234567890!5m2!1sen!2sus"
+                            width="100%"
+                            height="100%"
+                            style={{border: 0, display: "block"}}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        />
+                    </Column>
+                </Row>
             </Column>
-        </Column>
+        </Row>
     );
 }

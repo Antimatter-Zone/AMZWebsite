@@ -1,9 +1,7 @@
 "use client";
 
-import {Button, Line, Text} from "@once-ui-system/core";
+import {AvatarGroup, Button, Column, Heading, Input, Text, Textarea} from "@once-ui-system/core";
 import {type FormEvent, useState} from "react";
-
-import styles from "./contact.module.css";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -59,71 +57,44 @@ export default function ContactForm() {
     }
 
     return (
-        <form className={styles.form} aria-label="Contact form" onSubmit={handleSubmit}>
-            <label className={styles.field} htmlFor="name">
-                <Text as="span" variant="label-default-s">
-                    Name
+        <Column gap="16" fillWidth paddingX="l" paddingY="xl">
+            <AvatarGroup
+                reverse
+                avatars={[
+                    {src: "/images/avatars/01.png"},
+                    {src: "/images/avatars/02.png"},
+                    {src: "/images/avatars/03.png"},
+                ]}
+            />
+            <Column gap="s" fillWidth marginBottom="32" marginTop="8">
+                <Heading variant="display-strong-s">Send us a message</Heading>
+                <Text variant="body-default-xl" onBackground="neutral-medium" wrap="balance">
+                    We'd love to hear from you. Send us a message and we'll respond as soon as possible.
                 </Text>
-                <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    maxLength={100}
-                    className={styles.input}
-                    aria-required="true"
-                    aria-label="Name"
-                    autoComplete="name"
-                    placeholder="Your name"
-                />
-            </label>
-
-            <label className={styles.field} htmlFor="email">
-                <Text as="span" variant="label-default-s">
-                    Email
-                </Text>
-                <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    maxLength={320}
-                    className={styles.input}
-                    aria-required="true"
-                    aria-label="Email"
-                    autoComplete="email"
-                    placeholder="you@example.com"
-                />
-            </label>
-
-            <label className={styles.field} htmlFor="message">
-                <Text as="span" variant="label-default-s">
-                    Message
-                </Text>
-                <textarea
-                    id="message"
-                    name="message"
-                    required
-                    maxLength={2000}
-                    className={styles.textarea}
-                    rows={4}
-                    aria-required="true"
-                    aria-label="Message"
-                    placeholder="How can we help?"
-                />
-                <Text as="span" variant="label-default-xs" onBackground="neutral-weak">
-                    We respond to most inquiries within two business days.
-                </Text>
-            </label>
-
-            <Line/>
-            <Button type="submit" weight="strong" aria-label="Submit contact form" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Send message"}
-            </Button>
-
-            <Text as="p" variant="label-default-s" aria-live="polite" className={styles.status}>
-                {message}
-            </Text>
-        </form>
+            </Column>
+            <form onSubmit={handleSubmit} style={{width: "100%"}}>
+                <Column gap="-1" marginBottom="16">
+                    <Input radius="top" id="name" name="name" label="Name" type="text" required/>
+                    <Input radius="none" id="email" name="email" label="Email" type="email" required/>
+                    <Textarea
+                        style={{minHeight: "6rem"}}
+                        radius="bottom"
+                        id="message"
+                        name="message"
+                        label="Message"
+                        lines="auto"
+                        required
+                    />
+                </Column>
+                <Button type="submit" arrowIcon disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Send message"}
+                </Button>
+                {message && (
+                    <Text variant="label-default-s" aria-live="polite" marginTop="8">
+                        {message}
+                    </Text>
+                )}
+            </form>
+        </Column>
     );
 }

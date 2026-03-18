@@ -1,8 +1,7 @@
-import {Column, Heading, Meta, Row, SmartLink, Text} from "@once-ui-system/core";
+import {Column, Grid, Heading, Meta, Row, SmartLink, Text} from "@once-ui-system/core";
 
 import {baseURL, meta} from "@/resources/once-ui.config";
 import {projects} from "@/resources/projects";
-import styles from "./projects.module.css";
 
 export function generateMetadata() {
     return Meta.generate({
@@ -19,8 +18,8 @@ export function generateMetadata() {
 
 export default function ProjectsPage() {
     return (
-        <Column fillWidth center padding="l" gap="xl" s={{padding: "m", gap: "l"}}>
-            <Column maxWidth="l" align="center" gap="s" s={{gap: "s"}}>
+        <Column fillWidth center padding="l" gap="xl" minHeight="80vh">
+            <Column maxWidth="l" align="center" gap="s">
                 <Heading variant="display-strong-l" align="center">
                     Projects
                 </Heading>
@@ -29,16 +28,15 @@ export default function ProjectsPage() {
                 </Text>
             </Column>
 
-            <Column className={styles.grid} gap="l" maxWidth="xl" fillWidth s={{gap: "m"}}>
+            <Grid columns="3" gap="l" maxWidth="xl" fillWidth s={{ columns: "1" }} m={{ columns: "2" }}>
                 {projects.map((project) => (
                     <Column
                         key={project.slug}
-                        className={styles.card}
                         background="neutral-strong"
                         border="brand-weak"
                         padding="l"
                         gap="s"
-                        data-border="rounded"
+                        radius="l"
                     >
                         <Heading variant="heading-strong-m">{project.title}</Heading>
                         <Text onBackground="neutral-weak">{project.description}</Text>
@@ -46,13 +44,13 @@ export default function ProjectsPage() {
                             <Text variant="label-default-s" onBackground="neutral-weak">
                                 {project.highlights[0]}
                             </Text>
-                            <SmartLink href={`/projects/${project.slug}`} className={styles.learnMore}>
+                            <SmartLink href={`/projects/${project.slug}`}>
                                 <Text variant="label-strong-s">Learn more →</Text>
                             </SmartLink>
                         </Row>
                     </Column>
                 ))}
-            </Column>
+            </Grid>
         </Column>
     );
 }

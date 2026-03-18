@@ -17,7 +17,7 @@ export function generateMetadata() {
 
 export default function AboutPage() {
     return (
-        <Column fillWidth center padding="l" gap="xl" s={{padding: "m", gap: "l"}}>
+        <Column fillWidth center padding="l" gap="xl" minHeight="80vh">
             <Column maxWidth="l" align="center" gap="s">
                 <Heading variant="display-strong-l" align="center">
                     About Us
@@ -28,7 +28,7 @@ export default function AboutPage() {
                 </Text>
             </Column>
 
-            <Column maxWidth="xl" gap="l" fillWidth s={{gap: "m"}}>
+            <Column maxWidth="xl" gap="l" fillWidth>
                 <Column gap="xs" background="neutral-strong" padding="l" border="brand-weak">
                     <Heading variant="heading-strong-m">Our Mission</Heading>
                     <Text onBackground="neutral-weak">

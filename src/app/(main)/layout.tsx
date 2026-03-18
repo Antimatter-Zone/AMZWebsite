@@ -5,7 +5,7 @@ import '@/resources/custom.css'
 import classNames from "classnames";
 
 import {baseURL, dataStyle, effects, fonts, meta, style} from "@/resources/once-ui.config";
-import {Background, Column, Flex, Meta, opacity, Schema, SpacingToken} from "@once-ui-system/core";
+import {Background, Column, Flex, Meta, opacity, Schema, SpacingToken, ThemeInit} from "@once-ui-system/core";
 import {Providers} from '@/components/Providers';
 import {Header} from "@/components/Header";
 import {Footer} from "@/components/Footer";
@@ -49,108 +49,24 @@ export default function RootLayout({
                 path={meta.home.path}
             />
             <head>
-                <title>{meta.home.title}</title>
-                <script
-                    id="theme-init"
-                    dangerouslySetInnerHTML={{
-                        __html: `
-              (function() {
-                try {
-                  const root = document.documentElement;
-                  const getSafeStorage = () => {
-                    const memory = {};
-                    const memoryStorage = {
-                      getItem: (key) => (Object.prototype.hasOwnProperty.call(memory, key) ? memory[key] : null),
-                      setItem: (key, value) => {
-                        memory[key] = String(value);
-                      },
-                      removeItem: (key) => {
-                        delete memory[key];
-                      },
-                    };
-
-                    try {
-                      const existingStorage = window.localStorage;
-
-                      if (
-                        existingStorage &&
-                        typeof existingStorage.getItem === 'function' &&
-                        typeof existingStorage.setItem === 'function' &&
-                        typeof existingStorage.removeItem === 'function'
-                      ) {
-                        return existingStorage;
-                      }
-                    } catch (storageError) {}
-
-                    try {
-                      window.localStorage = memoryStorage;
-                    } catch (assignError) {}
-
-                    try {
-                      Object.defineProperty(window, 'localStorage', {
-                        value: memoryStorage,
-                        configurable: true,
-                      });
-                    } catch (defineError) {}
-
-                    return memoryStorage;
-                  };
-
-                  const storage = getSafeStorage();
-                  
-                  // Set defaults from config
-                  const config = ${JSON.stringify({
-                            theme: style.theme,
-                            brand: style.brand,
-                            accent: style.accent,
-                            neutral: style.neutral,
-                            solid: style.solid,
-                            'solid-style': style.solidStyle,
-                            border: style.border,
-                            surface: style.surface,
-                            transition: style.transition,
-                            scaling: style.scaling,
-                            'viz-style': dataStyle.variant,
-                        })};
-                  
-                  // Apply default values
-                  Object.entries(config).forEach(([key, value]) => {
-                    root.setAttribute('data-' + key, value);
-                  });
-                  
-                  // Resolve theme
-                  const resolveTheme = (themeValue) => {
-                    if (!themeValue || themeValue === 'system') {
-                      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                    }
-                    return themeValue;
-                  };
-                  
-                  // Apply saved theme or use config default
-                  const savedTheme = storage.getItem('data-theme');
-                  // Only override with system preference if explicitly set to 'system'
-                  const resolvedTheme = savedTheme ? resolveTheme(savedTheme) : config.theme === 'system' ? resolveTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : config.theme;
-                  root.setAttribute('data-theme', resolvedTheme);
-                  
-                  // Apply any saved style overrides
-                  const styleKeys = Object.keys(config);
-                  styleKeys.forEach(key => {
-                    const value = storage.getItem('data-' + key);
-                    if (value) {
-                      root.setAttribute('data-' + key, value);
-                    }
-                  });
-                } catch (e) {
-                  console.error('Failed to initialize theme:', e);
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                }
-              })();
-            `,
+                <ThemeInit
+                    config={{
+                        theme: style.theme,
+                        brand: style.brand,
+                        accent: style.accent,
+                        neutral: style.neutral,
+                        solid: style.solid,
+                        'solid-style': style.solidStyle,
+                        border: style.border,
+                        surface: style.surface,
+                        transition: style.transition,
+                        scaling: style.scaling,
+                        'viz-style': dataStyle.variant,
                     }}
                 />
             </head>
             <Providers>
-                <Column as="body" fillWidth margin="0" padding="0" style={{background: "var(--page-background)"}}>
+                <Column as="body" fillWidth margin="0" padding="0" background="page">
                     <Background
                         position="absolute"
                         mask={{

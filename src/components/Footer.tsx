@@ -1,40 +1,45 @@
 "use client";
 
-import {Flex, Row, SmartLink, Text} from "@once-ui-system/core";
-
-import styles from "./Footer.module.css";
+import {Column, Flex, Row, SmartLink, Text} from "@once-ui-system/core";
 
 const footerLinks = [
-    {label: "Home", href: "/"},
-    {label: "About", href: "/about"},
-    {label: "Projects", href: "/projects"},
-    {label: "Contact", href: "/contact"},
-    {label: "Legal", href: "/legal"},
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Projects", href: "/projects" },
+    { label: "Contact", href: "/contact" },
+    { label: "Legal", href: "/legal" },
 ];
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <Flex as="footer" className={styles.footer} fillWidth>
+        <Column
+            as="footer"
+            fillWidth
+            center
+            paddingX="l"
+            paddingY="l"
+            background="surface"
+            border="neutral-alpha-weak"
+            borderBottom="transparent"
+            borderLeft="transparent"
+            borderRight="transparent"
+        >
             <Flex
-                className={styles.inner}
-                align="center"
-                horizontal="between"
+                maxWidth="xl"
                 fillWidth
                 gap="m"
-                direction="column"
-                s={{align: "stretch", gap: "m"}}
-                m={{direction: "row", align: "center", gap: "s"}}
+                horizontal="center"
+                direction="row"
+                m={{ direction: "column", horizontal: "between"}}
             >
-                <Row className={styles.links} gap="m" wrap>
+                <Row gap="m" wrap horizontal="center" s={{ horizontal: "center" }} m={{ horizontal: "start" }}>
                     {footerLinks.map((link) => (
                         <SmartLink
                             key={link.href}
                             href={link.href}
-                            className={styles.link}
                             aria-label={`${link.label} page link`}
-                            unstyled
                         >
                             <Text variant="label-default-s">{link.label}</Text>
                         </SmartLink>
@@ -45,6 +50,6 @@ export function Footer() {
                     © 2021-{currentYear} Antimatter Zone LLC – All rights reserved.
                 </Text>
             </Flex>
-        </Flex>
+        </Column>
     );
 }

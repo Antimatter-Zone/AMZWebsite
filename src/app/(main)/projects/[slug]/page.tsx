@@ -1,6 +1,5 @@
-import Image from "next/image";
 import {notFound} from "next/navigation";
-import {Column, Heading, Line, Meta, Row, Text} from "@once-ui-system/core";
+import {Column, Heading, Line, Media, Meta, Row, Text} from "@once-ui-system/core";
 
 import {baseURL, meta} from "@/resources/once-ui.config";
 import {Project, projects} from "@/resources/projects";
@@ -58,16 +57,13 @@ export default async function ProjectDetailPage({params}: { params: Promise<{ sl
                         gap="xs"
                         background="neutral-strong"
                         border="brand-weak"
-                        data-border="rounded"
+                        radius="l"
                         style={{overflow: "hidden"}}
                     >
-                        <Image
+                        <Media
                             src={project.media.src}
                             alt={project.media.alt}
-                            width={project.media.width}
-                            height={project.media.height}
-                            style={{width: "100%", height: "auto"}}
-                            priority
+                            aspectRatio="16/9"
                         />
 
                         {project.media.caption ? (
@@ -81,7 +77,7 @@ export default async function ProjectDetailPage({params}: { params: Promise<{ sl
                     </Column>
                 ) : null}
 
-                <Column gap="s" background="neutral-strong" padding="l" border="brand-weak" data-border="rounded">
+                <Column gap="s" background="neutral-strong" padding="l" border="brand-weak" radius="l">
                     <Heading variant="heading-strong-m">What makes this unique</Heading>
                     <Column gap="s">
                         {project.highlights.map((detail) => (
@@ -93,7 +89,7 @@ export default async function ProjectDetailPage({params}: { params: Promise<{ sl
                     </Column>
                 </Column>
 
-                <Column gap="m" background="neutral-strong" padding="l" border="brand-weak" data-border="rounded">
+                <Column gap="m" background="neutral-strong" padding="l" border="brand-weak" radius="l">
                     <Heading variant="heading-strong-m">Project overview</Heading>
                     <Text onBackground="neutral-weak">{project.description}</Text>
                     <Row gap="s" wrap>

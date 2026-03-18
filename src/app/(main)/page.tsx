@@ -1,11 +1,11 @@
 "use client";
 
-import {Badge, Column, Heading, LetterFx, Line, Logo, Text,} from "@once-ui-system/core";
+import {Badge, Column, Heading, LetterFx, Line, Logo, Text} from "@once-ui-system/core";
 
 export default function Home() {
     return (
-        <Column fillWidth center padding="l" style={{minHeight: "100vh"}} s={{padding: "m"}}>
-            <Column maxWidth="m" horizontal="center" gap="l" align="center" s={{gap: "m"}}>
+        <Column fillWidth center padding="l" minHeight="100vh">
+            <Column maxWidth="m" horizontal="center" gap="l" align="center">
                 <Badge
                     textVariant="code-default-s"
                     border="brand-alpha-strong"
