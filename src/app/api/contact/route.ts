@@ -38,6 +38,10 @@ function readClientIp(request: Request): string {
     return readString(request.headers.get("x-real-ip")) || "Unavailable";
 }
 
+function readEnv(name: string): string {
+    return readString((process.env as Record<string, string | undefined>)[name]);
+}
+
 function buildDiscordPayload(payload: ContactPayload, request: Request, roleId: string) {
     const submittedAt = new Date();
     const submittedTimestamp = Math.floor(submittedAt.getTime() / 1000);
@@ -171,14 +175,17 @@ export async function POST(request: Request) {
             return NextResponse.json({error: validationError}, {status: 400});
         }
 
-        const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+        const webhookUrl = readEnv("DISCORD_WEBHOOK_URL");
 
         if (!webhookUrl) {
             console.error("DISCORD_WEBHOOK_URL is not configured.");
-            return NextResponse.json({error: "Contact service is not configured."}, {status: 500});
+            return NextResponse.json(
+                {error: "Contact service is not configured. Missing DISCORD_WEBHOOK_URL at runtime."},
+                {status: 500},
+            );
         }
 
-        const roleId = readString(process.env.DISCORD_CONTACT_ROLE_ID) || DEFAULT_DISCORD_CONTACT_ROLE_ID;
+        const roleId = readEnv("DISCORD_CONTACT_ROLE_ID") || DEFAULT_DISCORD_CONTACT_ROLE_ID;
 
         if (!/^\d+$/.test(roleId)) {
             console.error("DISCORD_CONTACT_ROLE_ID is invalid.");

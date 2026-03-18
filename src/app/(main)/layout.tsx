@@ -49,6 +49,7 @@ export default function RootLayout({
                 path={meta.home.path}
             />
             <head>
+                <title>{meta.home.title}</title>
                 <script
                     id="theme-init"
                     dangerouslySetInnerHTML={{
@@ -56,6 +57,46 @@ export default function RootLayout({
               (function() {
                 try {
                   const root = document.documentElement;
+                  const getSafeStorage = () => {
+                    const memory = {};
+                    const memoryStorage = {
+                      getItem: (key) => (Object.prototype.hasOwnProperty.call(memory, key) ? memory[key] : null),
+                      setItem: (key, value) => {
+                        memory[key] = String(value);
+                      },
+                      removeItem: (key) => {
+                        delete memory[key];
+                      },
+                    };
+
+                    try {
+                      const existingStorage = window.localStorage;
+
+                      if (
+                        existingStorage &&
+                        typeof existingStorage.getItem === 'function' &&
+                        typeof existingStorage.setItem === 'function' &&
+                        typeof existingStorage.removeItem === 'function'
+                      ) {
+                        return existingStorage;
+                      }
+                    } catch (storageError) {}
+
+                    try {
+                      window.localStorage = memoryStorage;
+                    } catch (assignError) {}
+
+                    try {
+                      Object.defineProperty(window, 'localStorage', {
+                        value: memoryStorage,
+                        configurable: true,
+                      });
+                    } catch (defineError) {}
+
+                    return memoryStorage;
+                  };
+
+                  const storage = getSafeStorage();
                   
                   // Set defaults from config
                   const config = ${JSON.stringify({
@@ -86,7 +127,7 @@ export default function RootLayout({
                   };
                   
                   // Apply saved theme or use config default
-                  const savedTheme = localStorage.getItem('data-theme');
+                  const savedTheme = storage.getItem('data-theme');
                   // Only override with system preference if explicitly set to 'system'
                   const resolvedTheme = savedTheme ? resolveTheme(savedTheme) : config.theme === 'system' ? resolveTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : config.theme;
                   root.setAttribute('data-theme', resolvedTheme);
@@ -94,7 +135,7 @@ export default function RootLayout({
                   // Apply any saved style overrides
                   const styleKeys = Object.keys(config);
                   styleKeys.forEach(key => {
-                    const value = localStorage.getItem('data-' + key);
+                    const value = storage.getItem('data-' + key);
                     if (value) {
                       root.setAttribute('data-' + key, value);
                     }
@@ -109,7 +150,7 @@ export default function RootLayout({
                 />
             </head>
             <Providers>
-                <Column as="body" background="page" fillWidth margin="0" padding="0">
+                <Column as="body" fillWidth margin="0" padding="0" style={{background: "var(--page-background)"}}>
                     <Background
                         position="absolute"
                         mask={{
